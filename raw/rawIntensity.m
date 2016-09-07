@@ -19,7 +19,7 @@ if nfiles >= 1
         t = Tiff(currentfilename, 'r');
         offsets = getTag(t, 'SubIFD');
         setSubDirectory(t,offsets(1));
-        raw = read(t); % Create variable ’raw’, the Bayer CFA data
+        raw = read(t); % Create variable â€™rawâ€™, the Bayer CFA data
         close(t);
         meta_info = imfinfo(currentfilename);
         % Crop to only valid pixels
