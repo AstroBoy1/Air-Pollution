@@ -1,9 +1,6 @@
-% Step 1: read in images
-imagefiles = dir('**.JPG');
-first_imageName = imagefiles(1).name;
+% This program finds boxImage1 in sceneImage1
 
-boxImage1 = imread('words.png');
-%sceneImage1 = imread('_DSC7666.JPG');
+% Step 1: read in images
 boxImage = rgb2gray(boxImage1);
 sceneImage1 = imread(first_imageName);
 sceneImage = rgb2gray(sceneImage1);
