@@ -6,7 +6,8 @@
 % It saves the data into excel documents.
 
 % changeable constant
-iterations = 10;
+iterations = 20;
+area = 1.75^2;
 
 warning('off','MATLAB:xlswrite:AddSheet');
 
@@ -15,6 +16,7 @@ imagefiles = dir('**.JPG');
 nfiles = length(imagefiles);
 data = zeros(iterations,iterations,iterations);
 rectangle = zeros(1,2);
+data_all = zeros(iterations, nfiles*iterations, iterations); % contains all the data
 
 % data collection
 tic
@@ -74,10 +76,10 @@ for l=1:nfiles
            end
         end
         data(1:length,1:length,k) = mean_array;
-        name = sprintf('%s_data.xls', currentfilename);
-        xlswrite(name, data(:,:,k), k);
+        data_all(:,iterations*l-(iterations-1):iterations*l,:) = data;
     end
-    xlswrite('pixel size.xls', rectangle);
+    xlswrite('pixel size.xlsx', rectangle);
     close all
 end
+run stats
 toc
