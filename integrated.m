@@ -1,16 +1,25 @@
-% This program runs CROPer.m, then crop, then intensity, then scaled
-% It takes in a folder of images and outputs the intensities
+% Michael Omori
+% Summer 2016
 
-close all
+% This program takes in a folder of images and outputs a spreadsheet of 
+% the intensities of each material scaled to references to compensate for
+% changes in lighting from imaging.
 
 tic;
-run CROPer
+
+% constants
+num_references = 10;
+SAMPLES = 6;
+SHOTS = 3;
+
+imagefiles = dir('**.JPG');
+first_imageName = imagefiles(1).name;
+
+run auto_Croper
 run crop
 run intensityCalc
 run scaled
 
-delete(cm)
-'all finished!'
 'data is saved in scaled_data.xlsx'
+
 toc;
-close all
