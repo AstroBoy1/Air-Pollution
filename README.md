@@ -2,7 +2,7 @@
 passive sampling
 
 If you want to run the manual version, download everything in the manual folder.
-If you want to run the auto version, download everything in the auto folder including the zipped images.
+If you want to run the auto version, download everything in the auto folder including the zipped images in references.zip
 
 integrated.m runs an auto crop program that analyzes images.
 rawIntensity.m does the same except with dng images.
