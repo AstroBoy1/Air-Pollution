@@ -7,7 +7,7 @@ scaled_data = 1:nfiles;
 labels = 1:REFERENCES;
 
 for i=1:nfiles
-    p = polyfit(data(1:10,i)', actual, 2);
+    p = polyfit(data(1:REFERENCES,i)', actual, 2);
     scaled_data(i) = p(1)*data(REFERENCES+1,i)^2 + p(2)*data(REFERENCES+1,i)+p(3);
 end
 
