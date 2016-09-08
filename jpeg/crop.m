@@ -1,21 +1,17 @@
 % Michael Omori
 % Summer 2016
 
-% This program crops the references and materials for each image
+% This program crops the references and materials for each image and
+% stores intensity information in the variable data
+
+data = zeros(REFERENCES+1,nfiles);
 
 % crops each image
 for i=1:nfiles
     currentfilename = imagefiles(i).name;
-    material_names(i) = {currentfilename}; 
     image = imread(currentfilename);
-    for j=1:num_references
+    for j=1:REFERENCES+1
         cropped_image = imcrop(image, crop_boundaries(j,:));
-        name = strcat(sprintf('value%d', j-1), currentfilename);
-        imwrite(cropped_image, name);
+        data(j,i) = mean(mean(mean(cropped_image)));
     end
-    cropped_image = imcrop(image, crop_boundaries(j+1,:));
-    name = strcat('material', currentfilename);
-    imwrite(cropped_image, name);
 end
-
-'finished croping images'

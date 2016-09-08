@@ -3,16 +3,14 @@
 
 % This program sets up the automatic cropping for crop.m
 
-num_references = 10;
 nfiles = length(imagefiles);
-material_names = cell(1,nfiles);
-crop_boundaries = zeros(num_references+1, 4);
+crop_boundaries = zeros(REFERENCES+1, 4);
 crop_c = 12;
 
 % 10 reference crops and 1 material crop using crop_rect
 % xmin, ymin, width, height
 
-for i=1:num_references
+for i=1:REFERENCES
     name = sprintf('value%d.png', i);
     boxImage1 = imread(name);
     run objectDetection
@@ -32,7 +30,6 @@ end
 m = msgbox('crop the material');
 [~, crop_rect] = imcrop(sceneImage1);
 delete(m);
-crop_boundaries(num_references+1,:) = crop_rect;
+crop_boundaries(REFERENCES+1,:) = crop_rect;
 
 close all;
-'finished crop setup'

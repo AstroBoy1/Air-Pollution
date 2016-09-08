@@ -1,17 +1,14 @@
-% This program finds boxImage1 in sceneImage1
+% This program finds an image in another one
+% It comes with the CV tool box in matlab
 
 % Step 1: read in images
 boxImage = rgb2gray(boxImage1);
-sceneImage1 = imread(first_imageName);
-sceneImage = rgb2gray(sceneImage1);
 
 % Step 2: Detect Feature Points
 boxPoints = detectSURFFeatures(boxImage);
-scenePoints = detectSURFFeatures(sceneImage);
 
 % Step 3: Extract Feature Descriptors
 [boxFeatures, boxPoints] = extractFeatures(boxImage, boxPoints);
-[sceneFeatures, scenePoints] = extractFeatures(sceneImage, scenePoints);
 
 % Step 4: Find Putative Point Matches
 boxPairs = matchFeatures(boxFeatures, sceneFeatures);
