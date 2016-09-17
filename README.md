@@ -18,3 +18,5 @@ guess.m guesses the time samples have been exposed using training data.
 neural.m does the same as guess.m except using neural networks.
 covAnalysis analyzes the coefficient of variation between different takes of the same sample and compares between different scaling versions.
 auto is the automated version of the code, manual is the manual version of the code.
+
+If using the automated method, which utilizes object detection, you need to put your reference images in the same folder.
