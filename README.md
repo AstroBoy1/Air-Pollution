@@ -3,7 +3,8 @@ passive sampling
 
 If you want to run the manual version, download everything in the manual folder.
 If you want to run the auto version, download everything in the auto folder including the zipped images in references.zip.
-allCode contains all the code together and is the final version.
+allCode contains all the code together.
+The zipped code folder is the newest version with everything in one place.
 
 integrated.m runs an auto crop program that analyzes images.
 rawIntensity.m does the same except with dng images.
@@ -19,4 +20,5 @@ neural.m does the same as guess.m except using neural networks.
 covAnalysis analyzes the coefficient of variation between different takes of the same sample and compares between different scaling versions.
 auto is the automated version of the code, manual is the manual version of the code.
 
-If using the automated method, which utilizes object detection, you need to put your reference images in the same folder.
+If using the automated method, which utilizes object detection, you need to put your reference images in the same folder and specify the
+names as shown in the comments in integrated.m
